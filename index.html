@@ -22,6 +22,7 @@
         img {
             width: 100%; /* Set desired width */
             height: auto; /* Automatically adjust height */
+            display: block;
         }
         #game-canvas {
             position: absolute;
@@ -112,8 +113,8 @@
             player: {
                 x: 0,
                 y: 0,
-                width: 64,
-                height: 64,
+                width: 74,
+                height: 80,
                 speed: config.playerSpeed,
                 direction: { x: 0, y: 0 }
             },
@@ -357,7 +358,7 @@
         // Add a new flower at a random position
         function addFlower() {
             const flowerType = Math.floor(Math.random() * state.images.flowers.length);
-            const flowerSize = 32;
+            const flowerSize = 50;
             
             // Position flower in current view plus some margin
             const margin = 100;
@@ -370,7 +371,7 @@
                 x: minX + Math.random() * (maxX - minX),
                 y: minY + Math.random() * (maxY - minY),
                 width: flowerSize,
-                height: flowerSize,
+                height: 57,
                 type: flowerType
             };
             
@@ -379,7 +380,7 @@
 
         // Add a new phone at a random position
         function addPhone() {
-            const phoneSize = 32;
+            const phoneSize = 40;
             
             // Position phone at the edge of the screen
             const side = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
@@ -408,7 +409,7 @@
                 x,
                 y,
                 width: phoneSize,
-                height: phoneSize,
+                height: 47,
                 speed: 1 + Math.random() * 2 // Random speed between 1 and 3
             };
             
